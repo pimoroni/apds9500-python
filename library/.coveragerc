@@ -1,4 +1,4 @@
 [run]
-source = {{LIBNAME}}
+source = apds9500
 omit =
     .tox/*
