@@ -5,6 +5,10 @@ from i2cdevice.adapter import Adapter, LookupAdapter
 __version__ = '0.0.1'
 
 
+class InterruptLookupAdapter(LookupAdapter):
+    pass
+
+
 class APDS9500:
     def __init__(self, i2c_addr=0x73, i2c_dev=None):
         self._i2c_addr = i2c_addr
@@ -164,10 +168,10 @@ class APDS9500:
                     BitField('increase', 0b00000010),
                 )),
                 # Automatic Gain and Exposure Controls BANK 1
-                Register('PGA_GAIN_GLOBAL:', 0x42, bank=1, fields=(
+                Register('PGA_GAIN_GLOBAL', 0x42, bank=1, fields=(
                     BitField('value', 0xFF, read_only=True),
                 )),
-                Register('PGA_GAIN_GGH:', 0x44, bank=1, fields=(
+                Register('PGA_GAIN_GGH', 0x44, bank=1, fields=(
                     BitField('value', 0xFF, read_only=True),
                 )),
 
@@ -248,7 +252,7 @@ class APDS9500:
                 Register('GESTURE_DETECTION_DELAY', 0x8D, bank=0, fields=(
                     BitField('value', 0xFF),
                 )),
-                Register('GESTURE_45_DEGREE DETECTION', 0x8E, bank=0, fields=(
+                Register('GESTURE_45_DEGREE_DETECTION', 0x8E, bank=0, fields=(
                     BitField('disable', 0b00000001),
                     BitField('ratio', 0xF0),
                 )),
