@@ -216,8 +216,234 @@ class APDS9500:
                     'no_object': 0b10000000
                 })),
 
+            #Gesture Bank 0 
 
-                
+            Register('GESTURE_LIGHT_THREASHOLD', 0x83, bank=0, fields=(
+            	BitField('value',read_only=False , 0xFF),
+            )),
+            Register('GESTURE_START_THREASHOLD_LSB', 0x84, bank=0, fields=(
+            	BitField('value',read_only=False , 0xFF),
+            )),
+            Register('GESTURE_START_THREASHOLD_MSB', 0x85, bank=0, fields=(
+            	BitField('value',read_only=False , 0xFF),
+            )),
+            Register('GESTURE_END_THREASHOLD_LSB', 0x86, bank=0, fields=(
+            	BitField('value',read_only=False , 0xFF),
+            )),
+            Register('GESTURE_END_THREASHOLD_MSB', 0x87, bank=0, fields=(
+            	BitField('value',read_only=False , 0xFF),
+            )),
+            Register('GESTURE_OBJECT_Z_MIN', 0x88, bank=0, fields=(
+            	BitField('value',read_only=False , 0xFF),
+            )),
+            Register('GESTURE_OBJECT_Z_MAX', 0x89, bank=0, fields=(
+            	BitField('value',read_only=False , 0xFF),
+            )),
+             Register('GESTURE_PROCESS_RESOLUTION', 0x8C, bank=0, fields=(
+            	BitField('value',read_only=False , 0xFF),
+            )),
+             Register('GESTURE_DETECTION_DELAY', 0x8D, bank=0, fields=(
+            	BitField('value',read_only=False , 0xFF),
+            )),
+             Register('GESTURE_45_DEGREE DETECTION', 0x8E, bank=0, fields=(
+            	BitField('disable',read_only=False , 0b00000001),
+                BitField('ratio',read_only=False , 0xF0),
+            )),
+             Register('GESTURE_X_to_Y_GAIN', 0x8F, bank=0, fields=(
+            	BitField('enable',read_only=False , 0b00000001),
+                BitField('ratio',read_only=False , 0xF0),
+            )),
+            Register('GESTURE_NO_MOTION_COUNTER_THRS', 0x90, bank=0, fields=(
+            	BitField('value',read_only=False , 0xFF),
+            )),
+            Register('GESTURE_NO_OBJECT_COUNTER_THRS', 0x91, bank=0, fields=(
+            	BitField('value',read_only=False , 0xFF),
+            )),
+            Register('GESTURE_NORMALIZED_IMAGE_WIDTH', 0x92, bank=0, fields=(
+            	BitField('value',read_only=False , 0xFF),
+            )),
+           Register('GESTURE_DETECTION_HORIZONTAL_THRS', 0x93, bank=0, fields=(
+            	BitField('value',read_only=False , 0xFF),
+            )),
+            Register('GESTURE_DETECTION_VERTICAL_THRS', 0x94, bank=0, fields=(
+            	BitField('value',read_only=False , 0xFF),
+            )),
+            Register('GESTURE_DETECTION_Z_THRS', 0x95, bank=0, fields=(
+            	BitField('value',read_only=False , 0xFF),
+            )),
+            Register('GESTURE_DETECTION_XY_THRS', 0x96, bank=0, fields=(
+            	BitField('value',read_only=False , 0xFF),
+            )),
+            Register('GESTURE_DETECTION_Z_ANGLE__THRS', 0x97, bank=0, fields=(
+            	BitField('value',read_only=False , 0xFF),
+            )),
+            Register('GESTURE_ROTATE_ANGLE_THRS', 0x98, bank=0, fields=(
+            	BitField('value',read_only=False , 0xFF),
+            )),
+            Register('GESTURE_CONTINUOUS_ROTATION', 0x99, bank=0, fields=(
+            	BitField('enable',read_only=False , 0b00000001),
+                BitField('threshold',read_only=False , 0b00111110),
+            )),
+            Register('GESTURE_ROTATE_XY_THRS', 0x9A, bank=0, fields=(
+            	BitField('value',read_only=False , 0xFF),
+            )),
+            Register('GESTURE_ROTATE_Z_THRS', 0x9B, bank=0, fields=(
+            	BitField('value',read_only=False , 0xFF),
+            )),
+            Register('GESTURE_IIR_FILTER', 0x9C, bank=0, fields=(
+            	BitField('weight',read_only=False , 0b00000011),
+                BitField('distance_threshold',read_only=False , 0b01111100),
+            )),
+            Register('GESTURE_IIR_FILTER_DISTANCE', 0x9D, bank=0, fields=(
+            	BitField('start_distance_threashold',read_only=False , 0b00001111),
+                BitField('end_distance_threshold',read_only=False , 0b01110000),
+            )),
+            Register('GESTURE_DETECTION_ENABLE', 0x9D, bank=0, fields=(
+            	BitField('rotate_enable',read_only=False , 0b00010000),
+                BitField('z_enable',read_only=False , 0b00100000),
+                BitField('y_enable',read_only=False , 0b01000000),
+                BitField('x_enable',read_only=False , 0b10000000),
+            )),
+            Register('GESTURE_FILTER_IMAGE', 0xA5, bank=0, fields=(
+            	BitField('average_mode_enable',read_only=False , 0b00000001),
+                BitField('average_mode',read_only=False , 0b00001100),
+                BitField('use_light_weight',read_only=False , 0b00010000),
+            )),
+            Register('GESTURE_FRAME_EDGE_ACC_THRS', 0xA9, bank=0, fields=(
+            	BitField('value',read_only=False , 0xFF),
+            )),
+            Register('GESTURE_OBJECT_CENTER_X_LSB', 0xAC, bank=0, fields=(
+            	BitField('value',read_only=True , 0xFF),
+            )),
+            Register('GESTURE_OBJECT_CENTER_X_MSB', 0xAD, bank=0, fields=(
+            	BitField('value',read_only=True , 0xFF),
+            )),
+            Register('GESTURE_OBJECT_CENTER_Y_LSB', 0xAE, bank=0, fields=(
+            	BitField('value',read_only=True , 0xFF),
+            )),
+            Register('GESTURE_OBJECT_CENTER_Y_MSB', 0xAF, bank=0, fields=(
+            	BitField('value',read_only=True , 0xFF),
+            )),
+            Register('GESTURE_OBJECT_BRIGHTNESS', 0xB0, bank=0, fields=(
+            	BitField('value',read_only=True , 0xFF),
+            )),
+            Register('GESTURE_OBJECT_SIZE_LSB', 0xB1, bank=0, fields=(
+            	BitField('value',read_only=True , 0xFF),
+            )),
+            Register('GESTURE_OBJECT_SIZE_MSB', 0xB2, bank=0, fields=(
+            	BitField('value',read_only=True , 0xFF),
+            )),
+            Register('GESTURE_MOVEMENT_X', 0xB3, bank=0, fields=(
+            	BitField('value',read_only=True , 0xFF),
+            )),
+            Register('GESTURE_MOVEMENT_Y', 0xB4, bank=0, fields=(
+            	BitField('value',read_only=True , 0xFF),
+            )),
+            Register('GESTURE_MOVEMENT_Z', 0xB5, bank=0, fields=(
+            	BitField('value',read_only=True , 0xFF),
+            )),        
+            Register('GESTURE_RESULT', 0xB6, bank=0, fields=(
+            	BitField('result',read_only=True , 0x0F, adapter=InterruptLookupAdapter({
+                    'up': 1,
+                    'down': 2,
+                    'left': 3,
+                    'right': 4,
+                    'forward': 5,
+                    'backward': 6,
+                    'clockwise': 7,
+                    'counterclockwise': 8,
+                    'wave': 9,
+                    'n/a': 10
+                })),
+                BitField('state',read_only=True , 0x30, adapter=InterruptLookupAdapter({
+                    'inital': 0,
+                    'process': 1,
+                    'end': 2,
+
+                })),
+            )),
+            Register('GESTURE_WAVE_ABORT_COUNTERS', 0xB7, bank=0, fields=(
+            	BitField('wave',read_only=True , 0x0F),
+                BitField('abort',read_only=True , 0x70),
+            )),
+            Register('GESTURE_NO_OBJECT_COUNTER', 0xB8, bank=0, fields=(
+            	BitField('value',read_only=True , 0xFF),
+            )),
+            Register('GESTURE_NO_MOTION_COUNTER', 0xB9, bank=0, fields=(
+            	BitField('value',read_only=True , 0xFF),
+            )),    
+            Register('GESTURE_BRIGHT_OBJECT_COUNTER', 0xBA, bank=0, fields=(
+            	BitField('value',read_only=True , 0xFF),
+            )), 
+            Register('GESTURE_OBJECT_BIRGHTNESS_ACC_LSB', 0xBB, bank=0, fields=(
+            	BitField('value',read_only=True , 0xFF),
+            )),
+            Register('GESTURE_OBJECT_BIRGHTNESS_ACC_MSB', 0xBC, bank=0, fields=(
+            	BitField('value',read_only=True , 0xFF),
+            )),
+            Register('GESTURE_TIME_PERIOD_LSB', 0xBD, bank=0, fields=(
+            	BitField('value',read_only=True , 0xFF),
+            )),
+            Register('GESTURE_TIME_PERIOD_MSB', 0xBE, bank=0, fields=(
+            	BitField('value',read_only=True , 0xFF),
+            )),
+            Register('GESTURE_ANGLE_ACC_LSB', 0xC7, bank=0, fields=(
+            	BitField('value',read_only=True , 0xFF),
+            )),
+            Register('GESTURE_ANGLE_ACC_MSB', 0xC8, bank=0, fields=(
+            	BitField('value',read_only=True , 0xFF),
+            )),
+            Register('GESTURE_GAIN_VALUE_X', 0xCA, bank=0, fields=(
+            	BitField('value',read_only=True , 0xFF),
+            )),
+            Register('GESTURE_GAIN_VALUE_Y', 0xCB, bank=0, fields=(
+            	BitField('value',read_only=True , 0xFF),
+            )),
+            Register('GESTURE_Y_TO_Z_SUM', 0xCC, bank=0, fields=(
+            	BitField('value',read_only=False , 0xFF),
+            )),
+            Register('GESTURE_Y_TO_Z_FACTOR', 0xCD, bank=0, fields=(
+            	BitField('value',read_only=False , 0xFF),
+            )),
+            Register('GESTURE_IIR_FILTER_LENGTH', 0xCE, bank=0, fields=(
+            	BitField('cursor_object',read_only=False , 0b00000111),
+                BitField('gesture_object',read_only=False , 0b01110000),
+            )),
+            Register('GESTURE_WAVE_THRES', 0xCF, bank=0, fields=(
+            	BitField('count_thres',read_only=False , 0b00001111),
+                BitField('angle_thres',read_only=False , 0b11110000),
+            )),
+            Register('GESTURE_ABORT_THRES', 0xD0, bank=0, fields=(
+            	BitField('count_thres',read_only=False , 0b00000111),
+                BitField('angle_thres',read_only=False , 0b11111000),
+            )),
+            Register('GESTURE_ABORT_LENGTH', 0xD1, bank=0, fields=(
+            	BitField('value',read_only=False , 0xFF),
+            )),
+            Register('GESTURE_ABORT_MODE', 0xD2, bank=0, fields=(
+            	BitField('interval',read_only=False , 0b00111111),
+                BitField('confirm_mode',read_only=False , 0b01000000),
+                BitField('wave_detection_enable',read_only=False , 0b10000000),             #<<enabling wave detection mode
+            )),
+            Register('GESTURE_TIME_PERIOD_LSB', 0xD3, bank=0, fields=(
+            	BitField('value',read_only=True , 0xFF),
+            )),
+            Register('GESTURE_TIME_PERIOD_MSB', 0xD4, bank=0, fields=(
+            	BitField('value',read_only=True , 0xFF),
+            )),
+            Register('GESTURE_ANGLE_ACC_LSB', 0xC7, bank=0, fields=(
+            	BitField('value',read_only=True , 0xFF),
+            )),
+            Register('GESTURE_ANGLE_ACC_MSB', 0xC8, bank=0, fields=(
+            	BitField('value',read_only=True , 0xFF),
+            )),
+
+
+
+
+
+            #Gesture Bank 1 
+
             
 
 
